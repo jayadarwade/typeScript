@@ -1,0 +1,25 @@
+npm init
+npm i typescript @types/node node-ts
+npx tsc --init
+
+//update in tsconfig.json
+"resolveJsonModule": true,  
+"outDir": "./dist",
+"rootDir": "./src"
+"include": [
+  "./src/**/*.ts"
+],
+"exclude": [
+  "./node_modules"
+]
+//add in package.json in script
+"build": "tsc && npm run copy-file && node dist/swagger.js && node dist/app.js",
+"copy-file": "copyfiles -u 1 ./src/locals/**/* ./dist"
+
+npm i express @types/express
+
+npm i dotenv @types/dotenv body-parser path fs cors copyfiles os @types/cors
+
+npm i swagger-ui-express swagger-autogen
+
+npm i mongoose
